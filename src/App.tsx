@@ -6,16 +6,25 @@ import GlobalStyle from 'styles/GlobalStyle'
 
 const Container = styled.div`
   display: flex;
-  min-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
   padding: 0 80px;
+  margin: 0 auto;
+  height: 100%;
+`
+const SectionWrap = styled.div`
+  display: flex;
 `
 
 const App = () => {
   return (
     <Container>
       <GlobalStyle />
-      <ImageContainer />
-      <StatisticSection />
+      <SectionWrap>
+        <ImageContainer />
+        <StatisticSection />
+      </SectionWrap>
     </Container>
   )
 }

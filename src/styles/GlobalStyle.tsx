@@ -110,8 +110,12 @@ section {
   display: block;
 }
 
+html, body>div {
+  height: 100%;
+}
 body {
   line-height: 1;
+  height: 100%;
 }
 
 ol,
@@ -137,7 +141,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+strong{
+  font-weight: bold;
+}
 `
 
 export default GlobalStyle
