@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
@@ -50,6 +51,7 @@
     "@titicaca/eslint-config-triple": "^3.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/styled-components": "^5.1.25",
     "postcss-scss": "^4.0.4",
     "prettier": "^2.6.2",
     "sass": "^1.51.0",
