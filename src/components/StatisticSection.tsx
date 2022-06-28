@@ -17,13 +17,13 @@ const StatisticSection = () => {
   return (
     <SectionWrap>
       <StatisticText>
-        <strong>700만 명</strong>의 여행자
+        <strong>350만 명</strong>의 사용자
       </StatisticText>
       <StatisticText>
-        <strong>100만 개</strong>여행 리뷰
+        <strong>21만 개</strong>의 리뷰
       </StatisticText>
       <StatisticText>
-        <strong>470만 개</strong>의 여행 일정
+        <strong>650만 개</strong>의 저장
       </StatisticText>
       <RewardItemContainer />
     </SectionWrap>
