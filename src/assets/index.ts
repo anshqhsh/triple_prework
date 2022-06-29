@@ -1,7 +1,5 @@
-import Apple from './images/badge-apple4x.png'
-import PlayStore from './images/play-store2x.png'
-import TripleLogo from './images/triple2x.png'
+import APPLE_IMG from './images/badge-apple4x.png'
+import PLAYSTORE_IMG from './images/play-store2x.png'
+import TRIPLELOGO_IMG from './images/triple2x.png'
 
-export const APPLE_IMG = Apple
-export const PLAYSTORE_IMG = PlayStore
-export const TRIPLELOGO_IMG = TripleLogo
+export { APPLE_IMG, PLAYSTORE_IMG, TRIPLELOGO_IMG }
