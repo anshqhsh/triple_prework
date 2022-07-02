@@ -1,19 +1,13 @@
-/* eslint-disable no-console */
 import { useState } from 'react'
 
 import useInterval from './useInterval'
-
-interface Props {
-  duration: number
-  targetValue: number
-}
 
 function easeOutQuart(x: number): number {
   return 1 - Math.pow(1 - x, 4)
 }
 
 const frameDuration = 1000 / 60
-const useCounter = ({ duration, targetValue }: Props) => {
+const useCounter = (duration: number, targetValue: number) => {
   const [value, setValue] = useState(0)
   const [count, setCount] = useState(0)
 
@@ -24,12 +18,11 @@ const useCounter = ({ duration, targetValue }: Props) => {
     () => {
       const easing = easeOutQuart(count / frame)
       const currentValue = Math.round(targetValue * easing)
-      console.log(count)
+
       if (value !== targetValue) {
         setCount(count + 1)
         setValue(currentValue)
       } else {
-        console.log('??')
         setIsRunning(false)
       }
     },

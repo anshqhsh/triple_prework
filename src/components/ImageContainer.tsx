@@ -1,6 +1,18 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { TRIPLELOGO_IMG } from 'assets'
+
+const appearAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
 
 const ContentLogo = styled.div`
   top: 150px;
@@ -14,6 +26,10 @@ const ContentLogo = styled.div`
   font-size: 15px;
   color: rgba(58, 58, 58, 0.7);
   box-sizing: border-box;
+  opacity: 0;
+  animation: ${appearAnimation};
+  animation-duration: 700ms;
+  animation-timing-function: cubic-bezier(0.37, 0.24, 0.05, 1.02);
 `
 
 const ImageContainer = () => {

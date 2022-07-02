@@ -1,12 +1,28 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { APPLE_IMG, PLAYSTORE_IMG } from 'assets'
 
 interface RewardProps {
   src: string
 }
+const appearAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
 const Container = styled.div`
   display: flex;
+  opacity: 1;
+  animation: ${appearAnimation};
+  animation-duration: 700ms;
+  animation-delay: 200ms;
+  animation-timing-function: cubic-bezier(0.37, 0.24, 0.05, 1.02);
 `
 const RewardItem = styled.div<RewardProps>`
   height: 54px;
