@@ -24,7 +24,8 @@ const useCounter = ({ duration, targetValue }: Props) => {
     () => {
       const easing = easeOutQuart(count / frame)
       const currentValue = Math.round(targetValue * easing)
-      if (count !== targetValue) {
+      console.log(count)
+      if (value !== targetValue) {
         setCount(count + 1)
         setValue(currentValue)
       } else {
