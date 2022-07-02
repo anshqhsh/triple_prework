@@ -1,4 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+/* eslint-disable no-console */
+import { useRef, useState } from 'react'
+
+import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect'
 
 interface Props {
   duration: number
@@ -16,22 +19,20 @@ const useFrameAnimation = ({ duration, targetValue }: Props) => {
 
   const frame = Math.round(duration / frameDuration) // 60 frame per second
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const makeEasingAnimation = () => {
+      console.log(frameRef.current)
       const easing = easeOutQuart(frameRef.current / frame)
       const currentValue = Math.round(targetValue * easing)
-
       setValue(currentValue)
-
+      console.log('call')
       frameRef.current = requestAnimationFrame(makeEasingAnimation)
-
       if (currentValue === targetValue) {
         cancelAnimationFrame(frameRef.current)
       }
     }
 
     makeEasingAnimation()
-
     return () => {
       cancelAnimationFrame(frameRef.current)
     }

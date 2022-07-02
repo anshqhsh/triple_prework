@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import CountUp from 'react-countup'
 
 import RewardItemContainer from './RewardItemContainer'
 
 import useFrameAnimation from 'hooks/useFrameAnimation'
+import useCounter from 'hooks/useCounter'
 
 const SectionWrap = styled.section`
   margin-left: 223px;
@@ -17,54 +19,42 @@ const SectionWrap = styled.section`
 const StatisticText = styled.p`
   margin-bottom: 20px;
 `
-// 느려지는 애니메이션
-function easeOutQuart(x: number): number {
-  return 1 - Math.pow(1 - x, 4)
-}
+// // 느려지는 애니메이션
+// function easeOutQuart(x: number): number {
+//   return 1 - Math.pow(1 - x, 4)
+// }
 
-const frameDutation = 1000 / 60
+// const frameDuration = 1000 / 60
 
-const target = 350
-const duration = 5000
+// const target = 3500
+// const duration = 2000
 
 const StatisticSection = () => {
-  const frameRef = useRef(0)
   const [count, setCount] = useState(0)
-  const data = useFrameAnimation({ duration: 5000, targetValue: 400 })
-
+  const data = useFrameAnimation({ duration: 6000, targetValue: 3500 })
   // 초당 60프레임 120 frame
-  const frame = Math.round(duration / frameDutation)
-  let cnt = 0
+  // const frame = Math.round(duration / frameDuration)
+  const count1 = useCounter({ duration: 2000, targetValue: 500 })
   useEffect(() => {
-    console.log('render')
-    // TODO: 리팩토링
-    cnt++
-    const makeFrame = () => {
-      const progress = easeOutQuart(frameRef.current / frame)
-      const currentCount = Math.round(target * progress)
-
-      setCount(currentCount)
-
-      frameRef.current = requestAnimationFrame(makeFrame)
-
-      if (currentCount === target) {
-        cancelAnimationFrame(frameRef.current)
-      }
+    const frame = 1000 / 60
+    // const duration = 2000 // 2초동안 120번 변호
+    const targetValue = 600
+    let cnt = 0
+    const id = setInterval(() => {
+      cnt++
+      setCount((targetValue / 120) * cnt)
+    }, frame)
+    if (count === targetValue) {
+      return clearInterval(id)
     }
-
-    console.log(cnt)
-    makeFrame()
-    return () => {
-      // eslint-disable-next-line no-console
-      console.log('here')
-      console.log('??', cnt)
-      cancelAnimationFrame(frameRef.current)
-    }
-  }, [frame])
+    return () => clearInterval(id)
+  }, [count])
 
   return (
     <SectionWrap>
-      {count}
+      {count1}
+      {/* {count} */}
+      <CountUp end={700} duration={2} />
       {data}
       <StatisticText>
         <strong>350만 명</strong>의 사용자
