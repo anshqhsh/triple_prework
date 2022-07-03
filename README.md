@@ -42,19 +42,19 @@ triple_prework
 
 1. git clone
 
-``bash
+``
   git clone https://github.com/anshqhsh/triple_prework.git 
 ``
 
 2. dependencies install
 
-``bash
+``
   npm install
 ``
 
 3. 실행
 
-``bash
+``
   npm start
 ``
 ### 사용한 기술과 선택 이유
