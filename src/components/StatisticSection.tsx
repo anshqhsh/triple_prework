@@ -15,14 +15,14 @@ const appearAnimation = keyframes`
     transform: translateY(0);
   }
 `
-const SectionWrap = styled.section`
+const Container = styled.section`
   margin-left: 223px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   font-size: 36px;
   letter-spacing: -1px;
-  opacity: 0;
+  opacity: 1;
   animation: ${appearAnimation};
   animation-duration: 700ms;
   animation-delay: 100ms;
@@ -38,7 +38,7 @@ const StatisticSection = () => {
   const saveCount = useCounter(2000, 650)
 
   return (
-    <SectionWrap>
+    <Container>
       <StatisticText>
         <strong>{userCount}만 명</strong>의 사용자
       </StatisticText>
@@ -49,7 +49,7 @@ const StatisticSection = () => {
         <strong>{saveCount}만 개</strong>의 저장
       </StatisticText>
       <RewardItemContainer />
-    </SectionWrap>
+    </Container>
   )
 }
 export default StatisticSection

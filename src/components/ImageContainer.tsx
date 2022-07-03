@@ -26,7 +26,6 @@ const ContentLogo = styled.div`
   font-size: 15px;
   color: rgba(58, 58, 58, 0.7);
   box-sizing: border-box;
-  opacity: 0;
   animation: ${appearAnimation};
   animation-duration: 700ms;
   animation-timing-function: cubic-bezier(0.37, 0.24, 0.05, 1.02);
