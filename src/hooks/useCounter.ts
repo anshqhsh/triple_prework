@@ -2,11 +2,10 @@ import { useState } from 'react'
 
 import useInterval from './useInterval'
 
-function easeOutQuart(x: number): number {
-  return 1 - Math.pow(1 - x, 4)
-}
+import { easeOutQuart } from 'styles/mixins/easings'
 
 const frameDuration = 1000 / 60
+
 const useCounter = (duration: number, targetValue: number) => {
   const [value, setValue] = useState(0)
   const [count, setCount] = useState(0)

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import StatisticSection from 'components/StatisticSection'
-import ImageContainer from 'components/ImageContainer'
+import ImageContainer from 'components/LogoImage'
 import GlobalStyle from 'styles/GlobalStyle'
 
 const Container = styled.div`
@@ -9,9 +9,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 1200px;
+  height: 100%;
   padding: 0 80px;
   margin: 0 auto;
-  height: 100%;
 `
 const SectionWrap = styled.div`
   display: flex;

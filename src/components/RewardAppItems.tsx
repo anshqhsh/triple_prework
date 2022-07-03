@@ -1,43 +1,39 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import { APPLE_IMG, PLAYSTORE_IMG } from 'assets'
+import { colors } from 'styles/constants/colors'
+import { fadeInKeyFrames } from 'styles/mixins/animations'
 
 interface RewardProps {
   src: string
 }
-const appearAnimation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`
 const Container = styled.div`
   display: flex;
-  opacity: 1;
-  animation: ${appearAnimation};
+  font-size: 14px;
+  font-weight: bold;
+  color: ${colors.awardColor};
+  opacity: 0;
+  animation: ${fadeInKeyFrames};
   animation-duration: 700ms;
-  animation-delay: 200ms;
   animation-timing-function: cubic-bezier(0.37, 0.24, 0.05, 1.02);
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
 `
 const RewardItem = styled.div<RewardProps>`
+  display: inline-block;
   height: 54px;
   padding: 5px 0px 5px 62px;
-  margin-right: 39px;
   margin-top: 50px;
-  display: inline-block;
-  background-image: url(${(props) => props.src});
-  background-position: left top;
-  background-size: 54px 54px;
-  background-repeat: no-repeat;
+  margin-right: 39px;
   font-size: 14px;
   line-height: 22px;
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 54px 54px;
 `
-const RewardItemContainer = () => {
+const RewardAppItems = () => {
   return (
     <Container>
       <RewardItem src={PLAYSTORE_IMG}>
@@ -53,4 +49,4 @@ const RewardItemContainer = () => {
     </Container>
   )
 }
-export default RewardItemContainer
+export default RewardAppItems
