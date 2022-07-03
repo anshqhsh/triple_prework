@@ -28,9 +28,9 @@ const StatisticText = styled.p`
 `
 
 const StatisticSection = () => {
-  const userCount = useCounter(5000, 350)
-  const reviewCount = useCounter(5000, 21)
-  const saveCount = useCounter(5000, 650)
+  const userCount = useCounter(2000, 350)
+  const reviewCount = useCounter(2000, 21)
+  const saveCount = useCounter(2000, 650)
 
   return (
     <Container>
