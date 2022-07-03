@@ -34,6 +34,10 @@ triple_prework
 - StyledComponent
 - eslint-config-triple
 
+### 배포
+[![Netlify Status](https://api.netlify.com/api/v1/badges/290aa46c-a415-41cc-875d-a1aa1daa39b3/deploy-status)](https://app.netlify.com/sites/tripleprework-leejoonhyuk/deploys)
+> https://tripleprework-leejoonhyuk.netlify.app/
+
 ### 프로젝트 실행 방법
 
 1. git clone
