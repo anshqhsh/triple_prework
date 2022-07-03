@@ -8,9 +8,11 @@ const frameDuration = 1000 / 60
 
 const useCounter = (duration: number, targetValue: number) => {
   const [value, setValue] = useState(0)
+
   const [count, setCount] = useState(0)
 
   const [isRunning, setIsRunning] = useState(true)
+
   const frame = Math.round(duration / frameDuration)
 
   useInterval(
